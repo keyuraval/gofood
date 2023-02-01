@@ -27,26 +27,20 @@ router.post("/createuser",
                 password: secPassword,
                 email: req.body.email,
                 location: req.body.location
-
             })
             res.json({ success: true });
 
         } catch (error) {
             console.log(error)
             res.json({ success: false });
-
-
         }
-
     })
-
 
 //LOGIN
 router.post("/loginuser",
     body('email').isEmail(),
     body('password', 'Incorrect Password').isLength({ min: 5 }),
     async (req, res) => {
-
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
@@ -75,7 +69,6 @@ router.post("/loginuser",
             res.json({ success: false });
             return error;
         }
-
     })
 
 module.exports = router;
