@@ -25,7 +25,7 @@ const Navbar = () => {
                             {(localStorage.getItem("authToken")) ?
                                 <li className="nav-item">
                                     <Link className="nav-link fs-5" aria-current="page" to="/">MyOrders</Link>
-                                </li> : <div>Hello World</div>}
+                                </li> : ""}
                         </ul>
                         {(!localStorage.getItem("authToken")) ?
                             <div className='d-flex'>
