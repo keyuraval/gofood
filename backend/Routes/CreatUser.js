@@ -1,4 +1,3 @@
-
 const express = require('express')
 const router = express.Router()
 const User = require('../models/User')
@@ -29,7 +28,6 @@ router.post("/createuser",
                 location: req.body.location
             })
             res.json({ success: true });
-
         } catch (error) {
             console.log(error)
             res.json({ success: false });
@@ -39,7 +37,7 @@ router.post("/createuser",
 //LOGIN
 router.post("/loginuser",
     body('email').isEmail(),
-    body('password', 'Incorrect Password').isLength({ min: 5 }),
+    body('password', 'Incorrect Passwor').isLength({ min: 5 }),
     async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
