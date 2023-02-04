@@ -1,4 +1,5 @@
 import React from 'react'
+import { Badge } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom'
 
 
@@ -7,7 +8,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("authToken");
-        navigate("/login");
+        navigate("/");
     }
     return (
         <div>
@@ -33,8 +34,8 @@ const Navbar = () => {
                                 <Link className="btn bg-white text-success mx-1" to="/signup">SignUp</Link>
                             </div> :
                             <div>
-                                <div className='btn bg-white text-success mx-2'>My Cart</div>
-                                <div className='btn bg-white text-danger mx-2' onClick={handleLogout()}>Logout</div>
+                                <div className='btn bg-white text-success mx-2'>My Cart&nbsp;&nbsp;<Badge pill bg="danger">2</Badge></div>
+                                <div className='btn bg-white text-danger mx-2' onClick={handleLogout}>Logout</div>
                             </div>
                         }
 
