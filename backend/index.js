@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use('/api/auth', require('./Routes/Auth'));
+app.use('/', require('./Routes/Auth'));
 
 app.listen(port, () => {
     console.log(`Example app listening on http://localhost:${port}`)

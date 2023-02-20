@@ -10,6 +10,7 @@ const fetch = require('../middleware/fetchdetails');
 const jwtSecret = "HaHa"
 // var foodItems= require('../index').foodData;
 // require("../index")
+
 //Creating a user and storing data to MongoDB Atlas, No Login Requiered
 router.post('/createuser', [
     body('email').isEmail(),
@@ -99,6 +100,9 @@ router.post('/getuser', fetch, async (req, res) => {
 
     }
 })
+
+
+
 // Get logged in User details, Login Required.
 router.post('/getlocation', async (req, res) => {
     try {
