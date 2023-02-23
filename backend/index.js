@@ -4,18 +4,20 @@ global.foodData = require('./db')(function call(err, data, CatData) {
     global.foodData = data;
     global.foodCategory = CatData;
 })
+const cors = require('cors')
 
 const express = require('express')
 const app = express()
 const port = 5000
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://gofood-keyuraval.vercel.app/");
+    res.setHeader("Access-Control-Allow-Origin", "https://gofood-git-main-keyuraval.vercel.app");
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
     );
     next();
 });
+app.use(cors());
 app.use(express.json())
 
 app.get('/', (req, res) => {
