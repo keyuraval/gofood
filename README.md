@@ -2,7 +2,7 @@
 A food ordering app made using MERN Stack.
 
 
-## Site
+## Site - https://famous-duckanoo-bc46cf.netlify.app/
 
 
 ![1](https://user-images.githubusercontent.com/96626624/219966749-f82b961d-13fc-4b5c-9059-faa613b2a5c9.png)
